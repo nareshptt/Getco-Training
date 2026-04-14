@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:getco_traing/Day%201.dart';
+
+import 'Home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      color: Colors.greenAccent,
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
       home: Day1(),
     );
   }
