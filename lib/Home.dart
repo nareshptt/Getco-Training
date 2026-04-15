@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:getco_traing/Widgets/AlertsScreen.dart';
 import 'package:getco_traing/Widgets/CounterScreen.dart';
 import 'package:getco_traing/Widgets/Drawer.dart';
+import 'package:getco_traing/Widgets/InputForm.dart';
 import 'package:getco_traing/Widgets/ListView.dart';
 
 import 'Widgets/GrideView.dart';
@@ -27,6 +28,8 @@ class _HomeState extends State<Home> {
         return Aboutscreen();
       case 3:
         return counterScreen();
+      case 4:
+        return InputForm();
       default:
         return Center(child: Text("Invalid Index"));
     }

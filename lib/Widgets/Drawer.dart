@@ -90,6 +90,27 @@ Widget drawer(BuildContext context) {
             ),
           ),
         ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Home(4)),
+            );
+          },
+          child: Container(
+            padding: EdgeInsets.all(5),
+            margin: EdgeInsets.all(10),
+            height: 50,
+            width: 250,
+            decoration: BoxDecoration(
+              color: Colors.greenAccent,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Center(
+              child: Text("Input Form", style: TextStyle(fontSize: 30)),
+            ),
+          ),
+        ),
       ],
     ),
   );
