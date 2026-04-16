@@ -5,7 +5,7 @@ import 'package:getco_traing/Widgets/CounterScreen.dart';
 import 'package:getco_traing/Widgets/Drawer.dart';
 import 'package:getco_traing/Widgets/ListView.dart';
 
-import 'Widgets/GrideView.dart';
+import '../Widgets/GrideView.dart';
 
 class Home extends StatefulWidget {
   final int index;

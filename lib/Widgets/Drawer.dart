@@ -1,105 +1,84 @@
 import 'package:flutter/material.dart';
-import 'package:getco_traing/Home.dart';
+import 'package:getco_traing/Screens/Home.dart';
 
 Widget drawer(BuildContext context) {
-  var index = 0;
   return SafeArea(
     child: Column(
       children: [
-        GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, "/ListView");
-          },
-          child: Container(
-            padding: EdgeInsets.all(5),
-            margin: EdgeInsets.all(10),
-            height: 50,
-            width: 250,
-            decoration: BoxDecoration(
-              color: Colors.greenAccent,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Center(
-              child: Text("ListView", style: TextStyle(fontSize: 30)),
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Home(1)),
-            );
-          },
-          child: Container(
-            padding: EdgeInsets.all(5),
-            margin: EdgeInsets.all(10),
-            height: 50,
-            width: 250,
-            decoration: BoxDecoration(
-              color: Colors.greenAccent,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Center(
-              child: Text("GrideView", style: TextStyle(fontSize: 30)),
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, "/AlertBox");
-          },
-          child: Container(
-            padding: EdgeInsets.all(5),
-            margin: EdgeInsets.all(10),
-            height: 50,
-            width: 250,
-            decoration: BoxDecoration(
-              color: Colors.greenAccent,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Center(
-              child: Text("Alerts", style: TextStyle(fontSize: 30)),
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, "/Counter");
-          },
-          child: Container(
-            padding: EdgeInsets.all(5),
-            margin: EdgeInsets.all(10),
-            height: 50,
-            width: 250,
-            decoration: BoxDecoration(
-              color: Colors.greenAccent,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Center(
-              child: Text("Counter", style: TextStyle(fontSize: 30)),
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, "/InputScreen");
-          },
-          child: Container(
-            padding: EdgeInsets.all(5),
-            margin: EdgeInsets.all(10),
-            height: 50,
-            width: 250,
-            decoration: BoxDecoration(
-              color: Colors.greenAccent,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Center(
-              child: Text("Input Form", style: TextStyle(fontSize: 30)),
-            ),
-          ),
-        ),
+        _menuItem(context, "ListView", Icons.list, () {
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            "/ListView",
+            (route) => false,
+          );
+        }),
+
+        _menuItem(context, "GridView", Icons.grid_view, () {
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => Home(1)),
+            (route) => false,
+          );
+        }),
+
+        _menuItem(context, "Alerts", Icons.warning, () {
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            "/AlertBox",
+            (route) => false,
+          );
+        }),
+
+        _menuItem(context, "Counter", Icons.plus_one, () {
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            "/Counter",
+            (route) => false,
+          );
+        }),
+
+        _menuItem(context, "Input Form", Icons.input, () {
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            "/InputScreen",
+            (route) => false,
+          );
+        }),
       ],
+    ),
+  );
+}
+
+Widget _menuItem(
+  BuildContext context,
+  String title,
+  IconData icon,
+  VoidCallback onTap,
+) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 8),
+    child: InkWell(
+      borderRadius: BorderRadius.circular(12),
+      onTap: onTap,
+      child: Container(
+        height: 55,
+        width: 260,
+        padding: const EdgeInsets.symmetric(horizontal: 15),
+        decoration: BoxDecoration(
+          color: Colors.greenAccent,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Row(
+          children: [
+            Icon(icon, size: 26),
+            const SizedBox(width: 15),
+            Text(
+              title,
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+      ),
     ),
   );
 }

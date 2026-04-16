@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'UsersData.dart';
+import 'DataSchema.dart';
 
 class UserDataScreen extends StatelessWidget {
   final Usersdata user;

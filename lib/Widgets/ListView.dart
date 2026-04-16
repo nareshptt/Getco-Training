@@ -1,57 +1,113 @@
 import 'package:flutter/material.dart';
 
-Widget listviewShow() {
-  final List<Map<String, String>> users = List.generate(50, (index) {
-    return {
-      "name": "User ${index + 1}",
-      "email": "user${index + 1}@gmail.com",
-      "role": index % 2 == 0 ? "Admin" : "User",
-    };
-  });
+import '../DataPassing/DataSchema.dart' show MobileData;
+import '../Screens/MobileInfo.dart';
 
-  return Scaffold(
-    body: ListView.builder(
-      itemCount: users.length,
-      itemBuilder: (context, index) {
-        final user = users[index];
+class listviewShow extends StatelessWidget {
+  listviewShow({super.key});
 
-        return Card(
-          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-          child: ListTile(
-            leading: CircleAvatar(
-              backgroundColor: Colors.blueGrey,
-              child: Text(
-                "${index + 1}",
-                style: TextStyle(color: Colors.white),
-              ), // First letter
-            ),
-            title: Text(user["name"]!),
-            subtitle: Text(user["email"]!),
-            trailing: Text(user["role"]!),
-            splashColor: Colors.blue, //On Tap Color Change
-
-            onTap: () {
-              print("Clicked ${user["name"]}");
-            },
-          ),
-        );
-      },
+  final List<MobileData> mobiles = [
+    MobileData(
+      name: "iPhone 15",
+      brand: "Apple",
+      price: 79999,
+      ram: "6GB",
+      storage: "128GB",
     ),
-  );
-}
+    MobileData(
+      name: "iPhone 14",
+      brand: "Apple",
+      price: 69999,
+      ram: "6GB",
+      storage: "128GB",
+    ),
+    MobileData(
+      name: "Galaxy S23",
+      brand: "Samsung",
+      price: 74999,
+      ram: "8GB",
+      storage: "256GB",
+    ),
+    MobileData(
+      name: "Galaxy A54",
+      brand: "Samsung",
+      price: 38999,
+      ram: "8GB",
+      storage: "128GB",
+    ),
+    MobileData(
+      name: "OnePlus 11",
+      brand: "OnePlus",
+      price: 56999,
+      ram: "12GB",
+      storage: "256GB",
+    ),
+    MobileData(
+      name: "OnePlus Nord 3",
+      brand: "OnePlus",
+      price: 33999,
+      ram: "8GB",
+      storage: "128GB",
+    ),
+    MobileData(
+      name: "Pixel 8",
+      brand: "Google",
+      price: 75999,
+      ram: "8GB",
+      storage: "128GB",
+    ),
+    MobileData(
+      name: "Pixel 7a",
+      brand: "Google",
+      price: 43999,
+      ram: "8GB",
+      storage: "128GB",
+    ),
+    MobileData(
+      name: "Redmi Note 13",
+      brand: "Xiaomi",
+      price: 18999,
+      ram: "6GB",
+      storage: "128GB",
+    ),
+    MobileData(
+      name: "Realme GT Neo 3",
+      brand: "Realme",
+      price: 29999,
+      ram: "8GB",
+      storage: "128GB",
+    ),
+  ];
 
-Widget getlistView() {
-  var listview = ListView(
-    children: [
-      ListTile(
-        leading: Icon(Icons.person),
-        title: Text("Getco"),
-        subtitle: Text("Getri"),
-        trailing: Icon(Icons.cabin_outlined),
-        onTap: () {},
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView.builder(
+        itemCount: mobiles.length,
+        itemBuilder: (context, index) {
+          final mobile = mobiles[index];
+
+          return Card(
+            margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            child: ListTile(
+              splashColor: Colors.blueAccent,
+              leading: const Icon(Icons.phone_android),
+              title: Text(mobile.name),
+              subtitle: Text("${mobile.brand} • ₹${mobile.price}"),
+              trailing: const Icon(Icons.arrow_forward_ios),
+
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MobileDetailScreen(mobile: mobile),
+                  ),
+                );
+              },
+            ),
+          );
+        },
       ),
-    ],
-  );
-
-  return listview;
+    );
+  }
 }

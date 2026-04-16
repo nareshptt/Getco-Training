@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:getco_traing/Home.dart';
-import 'package:getco_traing/Splashscreen.dart';
+import 'package:getco_traing/Screens/Home.dart';
+import 'package:getco_traing/Screens/Splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
