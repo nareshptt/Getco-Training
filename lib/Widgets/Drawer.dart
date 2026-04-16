@@ -2,16 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:getco_traing/Home.dart';
 
 Widget drawer(BuildContext context) {
-  String name = "List";
+  var index = 0;
   return SafeArea(
     child: Column(
       children: [
         GestureDetector(
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Home(0)),
-            );
+            Navigator.pushNamed(context, "/ListView");
           },
           child: Container(
             padding: EdgeInsets.all(5),
@@ -50,10 +47,7 @@ Widget drawer(BuildContext context) {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Home(2)),
-            );
+            Navigator.pushNamed(context, "/AlertBox");
           },
           child: Container(
             padding: EdgeInsets.all(5),
@@ -71,10 +65,7 @@ Widget drawer(BuildContext context) {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Home(3)),
-            );
+            Navigator.pushNamed(context, "/Counter");
           },
           child: Container(
             padding: EdgeInsets.all(5),
@@ -92,10 +83,7 @@ Widget drawer(BuildContext context) {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Home(4)),
-            );
+            Navigator.pushNamed(context, "/InputScreen");
           },
           child: Container(
             padding: EdgeInsets.all(5),
