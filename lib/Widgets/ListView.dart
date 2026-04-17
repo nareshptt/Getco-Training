@@ -92,7 +92,10 @@ class listviewShow extends StatelessWidget {
             child: ListTile(
               splashColor: Colors.blueAccent,
               leading: const Icon(Icons.phone_android),
-              title: Text(mobile.name),
+              title: Text(
+                mobile.name,
+                style: Theme.of(context).textTheme.headlineLarge,
+              ),
               subtitle: Text("${mobile.brand} • ₹${mobile.price}"),
               trailing: const Icon(Icons.arrow_forward_ios),
 

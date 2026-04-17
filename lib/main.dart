@@ -13,6 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        textTheme: TextTheme(
+          headlineLarge: TextStyle(fontSize: 25, color: Colors.redAccent),
+        ),
+      ),
 
       // ✅ First screen to open
       initialRoute: "/",
@@ -26,6 +31,7 @@ class MyApp extends StatelessWidget {
         "/AlertBox": (context) => Home(2),
         "/Counter": (context) => Home(3),
         "/InputScreen": (context) => Home(4),
+        "/AudioScreen": (context) => Home(5),
       },
     );
   }

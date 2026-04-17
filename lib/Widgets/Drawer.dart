@@ -44,6 +44,14 @@ Widget drawer(BuildContext context) {
             (route) => false,
           );
         }),
+
+        _menuItem(context, "AudioScreen", Icons.audio_file_outlined, () {
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            "/AudioScreen",
+            (route) => false,
+          );
+        }),
       ],
     ),
   );

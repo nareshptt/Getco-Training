@@ -12,33 +12,39 @@ class _AboutscreenState extends State<Aboutscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(height: 50),
-          Center(child: Container(child: Image.asset("images/p1.jpg"))),
-          SizedBox(height: 30),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.green,
-              foregroundColor: Colors.white, // text color
-            ),
-            onPressed: () {
-              myAlertBox(context);
-            },
-            child: Text("Click Me"),
+      body: Center(
+        child: Container(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(height: 50),
+
+              SizedBox(height: 30),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white, // text color
+                ),
+                onPressed: () {
+                  myAlertBox(context);
+                },
+                child: Text("Click Me"),
+              ),
+              SizedBox(height: 50),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white, // text color
+                ),
+                onPressed: () {
+                  showCustomAlert(context);
+                },
+                child: Text("Custom AlertBox"),
+              ),
+            ],
           ),
-          SizedBox(height: 50),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.green,
-              foregroundColor: Colors.white, // text color
-            ),
-            onPressed: () {
-              showCustomAlert(context);
-            },
-            child: Text("Custom AlertBox"),
-          ),
-        ],
+        ),
       ),
     );
   }

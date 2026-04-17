@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getco_traing/DataPassing/InputForm.dart';
+import 'package:getco_traing/Screens/AudioPlayScreen.dart';
 import 'package:getco_traing/Widgets/AlertsScreen.dart';
 import 'package:getco_traing/Widgets/CounterScreen.dart';
 import 'package:getco_traing/Widgets/Drawer.dart';
@@ -29,6 +30,8 @@ class _HomeState extends State<Home> {
         return counterScreen();
       case 4:
         return InputForm();
+      case 5:
+        return MusicScreen();
       default:
         return Center(child: Text("Invalid Index"));
     }
