@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:getco_traing/Database/Hive%20DB/HiveDataBase.dart';
 import 'package:getco_traing/Screens/Home.dart';
+
+import '../Authentication/UserLogin/Login.dart';
 
 Widget drawer(BuildContext context) {
   return SafeArea(
@@ -50,6 +53,18 @@ Widget drawer(BuildContext context) {
             context,
             "/AudioScreen",
             (route) => false,
+          );
+        }),
+        _menuItem(context, "Hive DB", Icons.storage_sharp, () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (builder) => HiveFormScreen()),
+          );
+        }),
+        _menuItem(context, "User Login", Icons.login, () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (builder) => LoginScreen()),
           );
         }),
       ],
