@@ -25,4 +25,3 @@ A Flutter-based training project developed to practice and implement core concep
 
 ---
 
-## 📂 Project Structure
