@@ -12,11 +12,11 @@ class ColorProvider extends ChangeNotifier {
 
     _color = Color.fromARGB(
       255,
-      random.nextInt(256), // Red
-      random.nextInt(256), // Green
-      random.nextInt(256), // Blue
+      random.nextInt(256),
+      random.nextInt(256),
+      random.nextInt(256),
     );
 
-    notifyListeners(); // update UI
+    notifyListeners();
   }
 }

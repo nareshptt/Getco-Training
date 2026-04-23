@@ -6,6 +6,7 @@ import '../API/NewsAPI.dart';
 import '../API/ProductsAPI.dart';
 import '../Authentication/UserLogin/Login.dart';
 import '../Providers/ColorScreen.dart';
+import '../WebView/WebView.dart';
 
 Widget drawer(BuildContext context) {
   return SafeArea(
@@ -83,12 +84,20 @@ Widget drawer(BuildContext context) {
               MaterialPageRoute(builder: (builder) => ProductScreen()),
             );
           }),
+          _menuItem(context, "WebView", Icons.web_outlined, () {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => WebViewScreen()),
+              (route) => false, // ✅ REQUIRED
+            );
+          }),
           _menuItem(context, "Color Provider", Icons.color_lens_outlined, () {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (builder) => ColorScreen()),
             );
           }),
+
           SizedBox(height: 20),
         ],
       ),
